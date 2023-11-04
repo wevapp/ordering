@@ -113,10 +113,43 @@ const useFoodStore = create((set) => ({
         category: 'rice',
         price: '500',
         description: 'Description of Rice d',
+      },{
+        id: 14,
+        // img: rice4,
+        name: 'rice e',
+        category: 'rice',
+        price: '500',
+        description: 'Description of Rice e',
       },
     ]
   },
 
+  // cart count items
+  cartItems: [],
+  countItems: 0,
+
+  // function add cart and counter
+  addCartItem: (item) => set((state) => {
+    const existingItemIndex = state.cartItems.findIndex((cartItem) => cartItem.id === item.id);
+  
+    if (existingItemIndex !== -1) {
+      // If the item already exists, increment its quantity and update the total price
+      const updatedCartItems = [...state.cartItems];
+      updatedCartItems[existingItemIndex].quantity += 1;
+      updatedCartItems[existingItemIndex].totalPrice = updatedCartItems[existingItemIndex].price * updatedCartItems[existingItemIndex].quantity;
+  
+      return {
+        countItems: state.countItems + 1,
+        cartItems: updatedCartItems,
+      };
+    } else {
+      // If the item doesn't exist, add it to the cart
+      return {
+        countItems: state.countItems + 1,
+        cartItems: [...state.cartItems, { ...item, quantity: 1, totalPrice: item.price }],
+      };
+    }
+  }),
   
 }))
 export default useFoodStore

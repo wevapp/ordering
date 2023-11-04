@@ -8,6 +8,7 @@ import Login from './components/Login/Login'
 import Register from './components/Regitser/Register'
 
 import MeatDescription from './components/Description/MeatDescription'
+import DisplayBill from './components/Bill/DisplayBill'
 
 import Main from './components/Menupage/Main'
 import Rice from './components/Menupage/Rice'
@@ -24,7 +25,7 @@ function App() {
             <Route path='/main' element={<Main />}/>
             <Route path='/main/:id' element={<MeatDescription />}/>
             <Route path='/rice' element={<Rice />}/>
-
+            <Route path='/print-bill' element={<DisplayBill />}/>
           </Route>
       </Route>
     </Routes>

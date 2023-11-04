@@ -5,15 +5,26 @@ import { Link } from 'react-router-dom'
 import useFoodStore from '../../store/useFoodStore'
 
 const Main = () => {
-  // get all items 
-  const getAllItems = useFoodStore((state) => state.foodItems.items)
-  // filtered all item with category meat
-  const filteredMeatItem = getAllItems.filter((item => item.category === 'meat'))
 
-  const [search, setSearch] = useState('')
+  // Call addcart
+  const addCartItem = useFoodStore((state) => state.addCartItem);
+
+  // get all items 
+  const getAllItems = useFoodStore((state) => state.foodItems.items);
+
+  // filtered all item with category meat
+  const filteredMeatItem = getAllItems.filter((item => item.category === 'meat'));
+
+  // Variable for input search
+  const [search, setSearch] = useState('');
 
   // let search, if search box is empty, the value will be filtered meat item
-  const itemsAttempSearch = filteredMeatItem.filter((meatItem) => meatItem.name.includes(search.toLowerCase()))
+  const itemsAttempSearch = filteredMeatItem.filter((meatItem) => meatItem.name.includes(search.toLowerCase()));
+
+  // add to cart items
+  const handleAddCart = (item) => {
+    addCartItem(item)
+  }
   
   return (
     <div className=''>
@@ -38,7 +49,9 @@ const Main = () => {
                   <small className='text-rose-600'>$:{meatItem.price}</small>
                 </div>
                 <div>
-                  <i className="fa-solid fa-cart-shopping fa-beat fa-lg hover:text-green-600 cursor-pointer"></i>
+                  <i 
+                    onClick={() => handleAddCart(meatItem)}
+                    className="fa-solid fa-cart-shopping fa-beat fa-lg hover:text-green-600 cursor-pointer"></i>
                 </div>
               </footer>
             </li>
