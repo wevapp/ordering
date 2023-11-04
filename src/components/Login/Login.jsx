@@ -30,7 +30,7 @@ const Login = () => {
   
   // console.log(users)
   return (
-    <div className='bg-slate-100 min-h-screen max-h-screen max-w-[100%] min-w-[100%]'>
+    <div className='bg-slate-500 min-h-screen max-h-screen max-w-[100%] min-w-[100%]'>
         
         <div
           className='bg-white min-w-[500px] max-w-[500px] min-h-[400px] max-h-[400px] flex flex-col justify-center items-center m-auto rounded-lg shadow-md'

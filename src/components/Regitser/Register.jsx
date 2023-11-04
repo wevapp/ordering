@@ -10,7 +10,7 @@ const Register = () => {
 
   // Call the Store from zustand
   const {users, addUser} = useRegisterStore((state) => state)
-
+console.log(users)
   // Handler Variable to get User info
   const [fullname, setFullName] = useState('')
   const [birthday, setBirthday] = useState('')
