@@ -8,6 +8,7 @@ export default {
     extend: {
       screens: {
         'xs': '400px', // Define your custom "xs" screen
+        'xxs': '320px',
       },
     },
   },
