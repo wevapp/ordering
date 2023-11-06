@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import useFoodStore from '../../store/useFoodStore'
 
 const Rice = () => {
+ // Call addcart
+ const addCartItem = useFoodStore((state) => state.addCartItem);
+
     // get all items 
   const getAllItems = useFoodStore((state) => state.foodItems.items)
 
@@ -15,7 +18,13 @@ const Rice = () => {
   const [search, setSearch] = useState('')
 
       // let search, if search box is empty, the value will be filtered rice items
-  const itemsAttempSearch = filteredRiceItems.filter((riceItem) => riceItem.name.includes(search.toLowerCase()))
+  const itemsAttempSearch = filteredRiceItems.filter((riceItem) => riceItem.name.includes(search.toLowerCase()));
+
+   // add to cart items
+   const handleAddCart = (item) => {
+    addCartItem(item)
+  }
+  
 
   return (
     <div className=''>
@@ -37,10 +46,12 @@ const Rice = () => {
               <footer className='h-[60px] flex justify-between items-center px-4'>
                 <div className='font-bold grid'>
                   <small className='text-green-600'>{riceItem.name}</small>
-                  <small className='text-rose-600'>$:{riceItem.price}</small>
+                  <small className='text-rose-600'>$:{Number(riceItem.price).toLocaleString(undefined, { minimumFractionDigits: 2 })}</small>
                 </div>
                 <div>
-                  <i className="fa-solid fa-cart-shopping fa-beat fa-lg hover:text-green-600 cursor-pointer"></i>
+                  <i 
+                    onClick={() => handleAddCart(riceItem)}
+                    className="fa-solid fa-cart-shopping fa-beat fa-lg text-orange-600 hover:text-green-600 cursor-pointer"></i>
                 </div>
               </footer>
             </li>

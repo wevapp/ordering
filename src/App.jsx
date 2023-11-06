@@ -6,8 +6,10 @@ import Menulayout from './shared/component/layout/Menulayout'
 
 import Login from './components/Login/Login'
 import Register from './components/Regitser/Register'
+import PageNotFound from './components/Pagenotfound/PageNotFound'
 
 import MeatDescription from './components/Description/MeatDescription'
+import ViewCartItems from './components/Cart/ViewCartItems'
 import DisplayBill from './components/Bill/DisplayBill'
 
 import Main from './components/Menupage/Main'
@@ -25,9 +27,11 @@ function App() {
             <Route path='/main' element={<Main />}/>
             <Route path='/main/:id' element={<MeatDescription />}/>
             <Route path='/rice' element={<Rice />}/>
-            <Route path='/print-bill' element={<DisplayBill />}/>
+            <Route path='/cartitems' element={<ViewCartItems />}/>
           </Route>
       </Route>
+      <Route path='/print-bill' element={<DisplayBill />}/>
+      <Route path='/*' element={<PageNotFound />}/>
     </Routes>
   )
 }

@@ -29,7 +29,7 @@ const Header = () => {
 
     // function to add Cart
     const handleCartItem = () => {
-      navigateToDisplayBill('/print-bill')
+      navigateToDisplayBill('/cartitems')
     }
 
   return (

@@ -17,6 +17,10 @@ import rice1 from '../images/Rice/rice1.png'
 import rice2 from '../images/Rice/rice2.png'
 import rice3 from '../images/Rice/rice3.png'
 import rice4 from '../images/Rice/rice4.png'
+import rice5 from '../images/Rice/rice5.png'
+import rice6 from '../images/Rice/rice6.png'
+import rice7 from '../images/Rice/rice7.png'
+import rice8 from '../images/Rice/rice8.png'
 
 const useFoodStore = create((set) => ({
   // state variable for all items
@@ -45,7 +49,7 @@ const useFoodStore = create((set) => ({
         description: 'Description of Meat c',
       },{
         id: 4,
-        img: img4,
+        img: img10,
         name: 'meat d',
         category: 'meat',
         price: '500',
@@ -115,11 +119,32 @@ const useFoodStore = create((set) => ({
         description: 'Description of Rice d',
       },{
         id: 14,
-        // img: rice4,
+        img: rice5,
         name: 'rice e',
         category: 'rice',
         price: '500',
         description: 'Description of Rice e',
+      },{
+        id: 15,
+        img: rice6,
+        name: 'rice f',
+        category: 'rice',
+        price: '500',
+        description: 'Description of Rice f',
+      },{
+        id: 16,
+        img: rice7,
+        name: 'rice g',
+        category: 'rice',
+        price: '500',
+        description: 'Description of Rice g',
+      },{
+        id: 17,
+        img: rice8,
+        name: 'rice h',
+        category: 'rice',
+        price: '500',
+        description: 'Description of Rice h',
       },
     ]
   },
@@ -128,28 +153,87 @@ const useFoodStore = create((set) => ({
   cartItems: [],
   countItems: 0,
 
+  // Initialize totalCost to 0 
+  totalCost: 0,
+
+  // Define receipt number to 0
+  countReceiptNumbers: 0,
+
+  // function to add receipt number
+  incrementReceiptNumber: () => set((state) => ({
+    countReceiptNumbers: state.countReceiptNumbers + 1
+
+  })),
+
+   // Function to clear cartItems
+   clearCartItems: () => set((state) => ({
+    cartItems: [],
+    countItems: 0,
+    totalCost: 0,
+  })),
+
   // function add cart and counter
-  addCartItem: (item) => set((state) => {
-    const existingItemIndex = state.cartItems.findIndex((cartItem) => cartItem.id === item.id);
-  
+  addCartItem: (item) =>
+  set((state) => {
+    const existingItemIndex = state.cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id
+    );
+
     if (existingItemIndex !== -1) {
-      // If the item already exists, increment its quantity and update the total price
       const updatedCartItems = [...state.cartItems];
       updatedCartItems[existingItemIndex].quantity += 1;
-      updatedCartItems[existingItemIndex].totalPrice = updatedCartItems[existingItemIndex].price * updatedCartItems[existingItemIndex].quantity;
-  
+
+      // Convert the price to a number and update the total price
+      const itemPrice = parseFloat(updatedCartItems[existingItemIndex].price);
+      updatedCartItems[existingItemIndex].totalPrice =
+        itemPrice * updatedCartItems[existingItemIndex].quantity;
+
+      // Convert the total cost to a number
+      const newTotalCost = state.totalCost + itemPrice;
+
       return {
         countItems: state.countItems + 1,
         cartItems: updatedCartItems,
+        totalCost: newTotalCost,
       };
     } else {
-      // If the item doesn't exist, add it to the cart
+      // Convert the price to a number
+      const itemPrice = parseFloat(item.price);
+
+      // Convert the total cost to a number
+      const newTotalCost = state.totalCost + itemPrice;
+
       return {
         countItems: state.countItems + 1,
-        cartItems: [...state.cartItems, { ...item, quantity: 1, totalPrice: item.price }],
+        cartItems: [...state.cartItems, { ...item, quantity: 1, totalPrice: itemPrice }],
+        totalCost: newTotalCost,
       };
     }
   }),
+
+    // Function to removed Item
+    removeItem: (id) =>
+    set((state) => {
+      const itemToRemove = state.cartItems.find((item) => item.id === id);
   
+      if (!itemToRemove) {
+        return state;
+      }
+  
+      // Calculate the updated total cost by subtracting the total price of the removed item
+      const updatedTotalCost = state.totalCost - itemToRemove.totalPrice;
+  
+      // Calculate the updated countItems value by subtracting the quantity of the item being removed
+      const updatedCountItems = state.countItems - itemToRemove.quantity;
+  
+      // Filter out the item to remove from cartItems
+      const updatedCartItems = state.cartItems.filter((item) => item.id !== id);
+  
+      return {
+        cartItems: updatedCartItems,
+        countItems: updatedCountItems,
+        totalCost: updatedTotalCost, // Update the totalCost
+      };
+    }),    
 }))
 export default useFoodStore

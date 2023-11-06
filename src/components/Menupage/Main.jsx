@@ -46,12 +46,12 @@ const Main = () => {
               <footer className='h-[60px] flex justify-between items-center px-4'>
                 <div className='font-bold grid'>
                   <small className='text-green-600'>{meatItem.name}</small>
-                  <small className='text-rose-600'>$:{meatItem.price}</small>
+                  <small className='text-rose-600'>$: {Number(meatItem.price).toLocaleString(undefined, { minimumFractionDigits: 2 })}</small>
                 </div>
                 <div>
                   <i 
                     onClick={() => handleAddCart(meatItem)}
-                    className="fa-solid fa-cart-shopping fa-beat fa-lg hover:text-green-600 cursor-pointer"></i>
+                    className="fa-solid fa-cart-shopping fa-beat text-orange-600 fa-lg hover:text-green-600 cursor-pointer"></i>
                 </div>
               </footer>
             </li>

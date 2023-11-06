@@ -1,0 +1,40 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "position": "Software Engineer",
+        "department": "Engineering"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "position": "Product Manager",
+        "department": "Product Management"
+      },
+      {
+        "id": 3,
+        "name": "Alice Johnson",
+        "position": "Data Analyst",
+        "department": "Data Science"
+      }
+    ],
+    "products": [
+      {
+        "id": "A123",
+        "name": "Widget",
+        "price": 19.99
+      },
+      {
+        "id": "B456",
+        "name": "Gadget",
+        "price": 49.99
+      },
+      {
+        "id": "C789",
+        "name": "Accessory",
+        "price": 9.99
+      }
+    ]
+  }
+  
