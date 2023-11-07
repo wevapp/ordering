@@ -1,5 +1,6 @@
-@media only screen and (max-width:640px) {
+@media only screen and (max-width:639px) {
     .register{
-        margin-left: 0%;
+        margin: 0%;
+        padding: 0;
     }
   }
