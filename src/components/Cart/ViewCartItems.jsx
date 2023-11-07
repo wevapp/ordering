@@ -4,7 +4,7 @@ import useFoodStore from '../../store/useFoodStore'
 
 const ViewCartItems = () => {
   // call the cart item to view all item purchase
-  const {cartItems, totalCost, removeItem} = useFoodStore((state) => state)
+  const {cartItems, totalCost, removeItem, editQuantity} = useFoodStore((state) => state)
 
   // Navigate to display bill component
   const navigate = useNavigate()
@@ -29,6 +29,7 @@ const ViewCartItems = () => {
                 <small className='text-rose-600'>$: {item.totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2 })}</small>
             </div>
             <div>
+                <button onClick={() => {editQuantity(item.id, prompt('Enter new quantity:', item.quantity))}} className='px-3 mr-1 py-1 bg-green-500 text-white font-semibold rounded'>Edit</button>
                 <button onClick={() => {removeItem(item.id)}}className='px-3 py-1 bg-rose-500 text-white font-semibold rounded'>Remove</button>
             </div>
            </div>

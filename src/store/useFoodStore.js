@@ -39,8 +39,14 @@ import des6 from '../images/Dessert/des6.png'
 import des7 from '../images/Dessert/des7.png'
 import des8 from '../images/Dessert/des8.png'
 
+// import soda
+import soda1 from '../images/Soda/soda1.jpg'
+import soda2 from '../images/Soda/soda2.jpg'
+import soda3 from '../images/Soda/soda3.jpg'
+import soda4 from '../images/Soda/soda4.jpg'
+
 const useFoodStore = create((set) => ({
-  // state variable for all items
+  // define variable for all items
   foodItems: {
     items:[
       {
@@ -253,11 +259,39 @@ const useFoodStore = create((set) => ({
         category: 'dessert',
         price: '500',
         description: 'Description of dessert h',
+      },{ // Soda ----------------------------
+        id: 31,
+        img: soda1,
+        name: 'soda a',
+        category: 'soda',
+        price: '500',
+        description: 'Description of soda a',
+      },{ 
+        id: 32,
+        img: soda2,
+        name: 'soda b',
+        category: 'soda',
+        price: '500',
+        description: 'Description of soda b',
+      },{ 
+        id: 33,
+        img: soda3,
+        name: 'soda c',
+        category: 'soda',
+        price: '500',
+        description: 'Description of soda c',
+      },{ 
+        id: 34,
+        img: soda4,
+        name: 'soda d',
+        category: 'soda',
+        price: '500',
+        description: 'Description of soda d',
       },
     ]
   },
 
-  // cart count items
+  // cart count items and stored all purchase items
   cartItems: [],
   countItems: 0,
 
@@ -317,6 +351,35 @@ const useFoodStore = create((set) => ({
         totalCost: newTotalCost,
       };
     }
+  }),
+
+// Function to edit the quantity of an item in the cart
+editQuantity: (id, newQuantity) =>
+  set((state) => {
+    const updatedCartItems = state.cartItems.map((item) => {
+      if (item.id === id) {
+        // Calculate the change in quantity
+        const quantityChange = newQuantity - item.quantity;
+
+        // Update the quantity and total price of the specific item
+        item.quantity = newQuantity;
+        item.totalPrice = parseFloat(item.price) * newQuantity;
+
+        // Update countItems by adding the quantity change
+        state.countItems += quantityChange;
+      }
+      return item;
+    });
+
+    const updatedTotalCost = updatedCartItems.reduce(
+      (total, item) => total + item.totalPrice,
+      0
+    );
+
+    return {
+      cartItems: updatedCartItems,
+      totalCost: updatedTotalCost,
+    };
   }),
 
     // Function to removed Item

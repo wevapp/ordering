@@ -14,6 +14,9 @@ import DisplayBill from './components/Bill/DisplayBill'
 
 import Main from './components/Menupage/Main'
 import Rice from './components/Menupage/Rice'
+import Juice from './components/Menupage/Juice'
+import Dessert from './components/Menupage/Dessert'
+import Soda from './components/Menupage/Soda'
 
 function App() {
 
@@ -27,6 +30,9 @@ function App() {
             <Route path='/main' element={<Main />}/>
             <Route path='/main/:id' element={<MeatDescription />}/>
             <Route path='/rice' element={<Rice />}/>
+            <Route path='/juice' element={<Juice />}/>
+            <Route path='/dessert' element={<Dessert />}/>
+            <Route path='/soda' element={<Soda />}/>
             <Route path='/cartitems' element={<ViewCartItems />}/>
           </Route>
       </Route>

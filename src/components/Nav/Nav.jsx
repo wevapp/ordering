@@ -22,9 +22,9 @@ const Nav = ({ resetClick }) => {
             >
               <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/main'>MEAT</Link></small>
               <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/rice'>RICE</Link></small>
-              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/main'>JUICES</Link></small>
-              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/main'>SODA</Link></small>
-              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/main'>DESSERT</Link></small>
+              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/juice'>JUICES</Link></small>
+              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/soda'>SODA</Link></small>
+              <small className='hover:bg-orange-100 py-1 w-[400px] text-center transition delay-150 ease-in-out rounded'><Link onClick={resetClick} to='/dessert'>DESSERT</Link></small>
           </li>
         </ul>
     </div>
