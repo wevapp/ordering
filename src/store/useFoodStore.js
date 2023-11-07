@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-// import images
+// import meat
 import img1 from '../images/Beef/promo1.png'
 import img2 from '../images/Beef/promo2.png'
 import img3 from '../images/Beef/promo3.png'
@@ -21,6 +21,23 @@ import rice5 from '../images/Rice/rice5.png'
 import rice6 from '../images/Rice/rice6.png'
 import rice7 from '../images/Rice/rice7.png'
 import rice8 from '../images/Rice/rice8.png'
+
+// import juices
+import jus1 from '../images/Juices/juice1.png'
+import jus2 from '../images/Juices/juice2.png'
+import jus3 from '../images/Juices/juice3.png'
+import jus4 from '../images/Juices/juice4.png'
+import jus5 from '../images/Juices/juice5.png'
+
+// import dessert
+import des1 from '../images/Dessert/des1.png'
+import des2 from '../images/Dessert/des2.png'
+import des3 from '../images/Dessert/des3.png'
+import des4 from '../images/Dessert/des4.png'
+import des5 from '../images/Dessert/des5.png'
+import des6 from '../images/Dessert/des6.png'
+import des7 from '../images/Dessert/des7.png'
+import des8 from '../images/Dessert/des8.png'
 
 const useFoodStore = create((set) => ({
   // state variable for all items
@@ -145,6 +162,97 @@ const useFoodStore = create((set) => ({
         category: 'rice',
         price: '500',
         description: 'Description of Rice h',
+      },{ // juices -------------------------------
+        id: 18,
+        img: jus1,
+        name: 'jus a',
+        category: 'juice',
+        price: '500',
+        description: 'Description of jus a',
+      },{
+        id: 19,
+        img: jus2,
+        name: 'jus b',
+        category: 'juice',
+        price: '500',
+        description: 'Description of jus b',
+      },{
+        id: 20,
+        img: jus3,
+        name: 'jus c',
+        category: 'juice',
+        price: '500',
+        description: 'Description of jus c',
+      },{
+        id: 21,
+        img: jus4,
+        name: 'jus d',
+        category: 'juice',
+        price: '500',
+        description: 'Description of jus d',
+      },{
+        id: 22,
+        img: jus5,
+        name: 'jus e',
+        category: 'juice',
+        price: '500',
+        description: 'Description of jus e',
+      },{ // Dessert --------------------------
+        id: 23,
+        img: des1,
+        name: 'des a',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert a',
+      },{ 
+        id: 24,
+        img: des2,
+        name: 'des b',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert b',
+      },{ 
+        id: 25,
+        img: des3,
+        name: 'des c',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert c',
+      },{ 
+        id: 26,
+        img: des4,
+        name: 'des d',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert d',
+      },{ 
+        id: 27,
+        img: des5,
+        name: 'des e',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert e',
+      },{ 
+        id: 28,
+        img: des6,
+        name: 'des f',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert f',
+      },{ 
+        id: 29,
+        img: des7,
+        name: 'des g',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert g',
+      },{ 
+        id: 30,
+        img: des8,
+        name: 'des h',
+        category: 'dessert',
+        price: '500',
+        description: 'Description of dessert h',
       },
     ]
   },
