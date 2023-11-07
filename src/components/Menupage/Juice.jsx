@@ -37,7 +37,7 @@ const Juice = () => {
           className='w-64 px-3 py-1 rounded'
         />
       </search>
-      <ul className='p-4 grid gap-2 grid-cols-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <ul className='p-4 grid gap-4 grid-cols-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {itemsAttempSearch.map((juiceItem) => (
           <li
             className='border p-2 rounded h-[250px] bg-slate-200' 

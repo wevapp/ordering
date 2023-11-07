@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+// import style
+import RegStyle from './Register.module.css'
+import RegLogo from '../../images/BackgroundImage/Logo.png'
+
 // Import zustand state management
 import useRegisterStore from '../../store/LoginRegisterStore'
 
@@ -122,15 +126,14 @@ console.log(users)
   }
 
   return (
-    <div className=''>
-      <div className='bg-slate-100 max-h-[100%] min-h-[100%] max-w-[100%] min-w-[100%] flex justify-center items-center'>
-          
-          <div className='bg-white shadow-xl py-8 px-12 w-[500px] flex flex-col justify-center items-center'>
+    <div className={`${RegStyle['register']} text-white ml-[40%]`}>
+      <div className='transparent max-h-[100%] min-h-[100%] max-w-[100%] min-w-[100%]'>
+          <div className='shadow-xl px-12 w-[500px] flex flex-col justify-center items-center'>
 
             <div>
               <p
-                className='text-2xl mb-8 font-bold'
-              ><i>Registration Form</i></p>
+                className='text-2xl font-bold h-[230px]'
+              ><img src={RegLogo} alt="Logo" /></p>
             </div>
 
             <div className='mt-3'>
@@ -152,7 +155,7 @@ console.log(users)
                 name="birthday"
                 value={birthday}
                 onChange={(e) => {setBirthday(e.target.value)}}
-                className='px-4 py-1'
+                className='px-4 py-1 text-black'
               />
             </div>
 
@@ -260,7 +263,7 @@ console.log(users)
                   className='absolute right-2 top-2 cursor-pointer'
                   onClick={togglePasswordVisibility}
                   >
-                    {showPassword ? <i className="fa-duotone fa-eye"></i> : <i className="fa-duotone fa-eye-slash"></i>}
+                    {showPassword ? <i className="fa-sharp fa-light fa-eye"></i> : <i className="fa-duotone fa-eye-slash"></i>}
                 </div>
               </div>
 
@@ -288,7 +291,7 @@ console.log(users)
                   className='absolute right-2 top-2 cursor-pointer'
                   onClick={toggleConfirmPasswordVisibility}
                   >
-                    {showConfirmPassword ? <i className="fa-duotone fa-eye"></i> : <i className="fa-duotone fa-eye-slash"></i>}
+                    {showConfirmPassword ? <i className="fa-sharp fa-light fa-eye"></i> : <i className="fa-duotone fa-eye-slash"></i>}
                 </div>
               </div>
               {
@@ -308,13 +311,12 @@ console.log(users)
             <div className='mt-6 grid'>
               <button
                 onClick={handleSubmit}
-                className='bg-green-300 py-1 rounded w-[200px] hover:bg-green-200 font-semibold'
+                className='bg-green-600 py-1 rounded w-[200px] hover:bg-green-400 font-semibold'
               >Submit</button>
               <small
                 className='ml-8 my-2'
               >Have an account ? <Link className='hover:text-blue-500 font-bold' to='/login'>Login</Link></small>
             </div>
-
           </div>
       </div>
     </div>

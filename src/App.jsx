@@ -21,24 +21,26 @@ import Soda from './components/Menupage/Soda'
 function App() {
 
   return (
-    <Routes>
-      <Route element={<Rootlayout />}>
-        <Route index element={<Login />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/register' element={<Register />}/>
-          <Route element={<Menulayout />}>
-            <Route path='/main' element={<Main />}/>
-            <Route path='/main/:id' element={<MeatDescription />}/>
-            <Route path='/rice' element={<Rice />}/>
-            <Route path='/juice' element={<Juice />}/>
-            <Route path='/dessert' element={<Dessert />}/>
-            <Route path='/soda' element={<Soda />}/>
-            <Route path='/cartitems' element={<ViewCartItems />}/>
-          </Route>
-      </Route>
-      <Route path='/print-bill' element={<DisplayBill />}/>
-      <Route path='/*' element={<PageNotFound />}/>
-    </Routes>
+    
+      <Routes>
+        <Route element={<Rootlayout />}>
+          <Route index element={<Login />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
+            <Route element={<Menulayout />}>
+              <Route path='/main' element={<Main />}/>
+              <Route path='/main/:id' element={<MeatDescription />}/>
+              <Route path='/rice' element={<Rice />}/>
+              <Route path='/juice' element={<Juice />}/>
+              <Route path='/dessert' element={<Dessert />}/>
+              <Route path='/soda' element={<Soda />}/>
+              <Route path='/cartitems' element={<ViewCartItems />}/>
+            </Route>
+        </Route>
+        <Route path='/print-bill' element={<DisplayBill />}/>
+        <Route path='/*' element={<PageNotFound />}/>
+      </Routes>
+  
   )
 }
 
