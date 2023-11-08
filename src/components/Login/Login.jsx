@@ -38,7 +38,7 @@ const Login = () => {
   // console.log(users)
   return (
     <div className={`${LoginStyle['login']} h-screen ml-[40%] flex justify-center items-center`}>
-        
+
         <div
           className='transparent min-w-[400px] max-w-[400px] min-h-[400px] max-h-[400px] flex flex-col justify-center items-center m-auto rounded-lg shadow-md'
           >

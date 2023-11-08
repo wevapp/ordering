@@ -4,6 +4,10 @@ import { Routes, Route } from 'react-router-dom'
 import Rootlayout from './shared/component/layout/Rootlayout'
 import Menulayout from './shared/component/layout/Menulayout'
 
+import AdminLogin from './AdminComponents/AdminLogin/AdminLogin'
+import Dashboard from './AdminComponents/Dashboard/Dashboard'
+import Userprofile from './AdminComponents/Userprofile/Userprofile'
+
 import Login from './components/Login/Login'
 import Register from './components/Regitser/Register'
 import PageNotFound from './components/Pagenotfound/PageNotFound'
@@ -39,6 +43,9 @@ function App() {
         </Route>
         <Route path='/print-bill' element={<DisplayBill />}/>
         <Route path='/*' element={<PageNotFound />}/>
+        <Route path='/admin--' element={<AdminLogin />}/>
+        <Route path='/dashboard-' element={<Dashboard />}/>
+        <Route path='/user-profile' element={<Userprofile />}/>
       </Routes>
   
   )
