@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-blue-300 rounded row-span-6 border-2 border-black'>
+    <div className='bg-blue-300 rounded row-span-6'>
           <p className={`${NavStyle['logo']} h-[200px] flex justify-center items-center bg-blue-900 rounded-t`}><img src={Logo} alt="" className='h-[180px]'/></p>
 
           {/* Menu button */}
