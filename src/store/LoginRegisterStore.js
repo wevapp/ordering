@@ -6,10 +6,28 @@ const useRegisterStore = create((set) => ({
     // State Variable
     users: [
         {
-            fullname: 'Raymond Estrella',
-            username: 'aaa',
-            password: '12345'
-        }
+            address: "Calero",
+            birthday: "2023-11-05",
+            confirmPassword: "123",
+            contact: "09",
+            email: "e@gmail.com",
+            fullname: "Raymond Estrella",
+            gender: "male",
+            password: "123",
+            username: "mond"
+        },{
+            address: "Calero",
+            birthday: "2023-11-05",
+            confirmPassword: "123",
+            contact: "09",
+            email: "e@gmail.com",
+            fullname: "Raymond Estrella",
+            gender: "male",
+            password: "12345",
+            username: "ray"
+        },
+
+
     ],
 
     // Function to add new user

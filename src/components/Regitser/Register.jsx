@@ -14,7 +14,7 @@ const Register = () => {
 
   // Call the Store from zustand
   const {users, addUser} = useRegisterStore((state) => state)
-console.log(users)
+  
   // Handler Variable to get User info
   const [fullname, setFullName] = useState('')
   const [birthday, setBirthday] = useState('')
@@ -77,56 +77,67 @@ console.log(users)
 
   // Handler function to stored User Zustand Array Object variable
   const handleSubmit = () => {
-    // check the input fields if empty
-    if(
-        fullname.length > 0 &&
-        birthday.length > 0 &&
-        gender.length > 0 &&
-        address.length > 0 &&
-        contact.length > 0 &&
-        email.length > 0 &&
-        username.length > 0 &&
-        password.length > 0 &&
-        confirmPassword.length > 0
-      ){
-        
-        // Create a user object with all the user's information
-        const user = {
-          fullname,
-          birthday,
-          gender,
-          address,
-          contact,
-          email,
-          username,
-          password,
-          confirmPassword,
-        }
-
-        if(password === confirmPassword){
+    // Check if all input fields are filled
+    if (
+      fullname.length > 0 &&
+      birthday.length > 0 &&
+      gender.length > 0 &&
+      address.length > 0 &&
+      contact.length > 0 &&
+      email.length > 0 &&
+      username.length > 0 &&
+      password.length > 0 &&
+      confirmPassword.length > 0
+    ) {
+      // Create a user object with all the user's information
+      const user = {
+        fullname,
+        birthday,
+        gender,
+        address,
+        contact,
+        email,
+        username,
+        password,
+        confirmPassword,
+      };
+  
+      // Check if password and confirmPassword match
+      if (password === confirmPassword) {
+        // Check if a user with the same username already exists
+        const isExistingUser = users.some(
+          (user) => user.username === username
+        );
+  
+        if (!isExistingUser) {
+          alert('Successfully Registered');
           // Call the Zustand action to add the user to the array
-          addUser(user)
-
+          addUser(user);
+  
           // Clear the input values
-          setFullName('')
-          setBirthday('')
-          setGender('')
-          setAddress('')
-          setContact('')
-          setEmail('')
-          setUsername('')
-          setPassword('')
-          setConfirmPassword('')
-        }else{
-          alert('Password and Confirm Password did not match')
+          setFullName('');
+          setBirthday('');
+          setGender('');
+          setAddress('');
+          setContact('');
+          setEmail('');
+          setUsername('');
+          setPassword('');
+          setConfirmPassword('');
+        } else {
+          alert('Existing Account');
         }
-      }else{
-        alert('Complete Details')
+      } else {
+        alert('Password and Confirm Password did not match');
       }
-  }
+    } else {
+      alert('Complete Details');
+    }
+  };
+  
 
   return (
-    <div className={`${RegStyle['register']} text-white ml-[40%]`}>
+    <div className={`${RegStyle['register']} ml-[40%]`}>
       <div className='transparent max-h-[100%] min-h-[100%] max-w-[100%] min-w-[100%]'>
           <div className='shadow-xl px-12 w-[500px] flex flex-col justify-center items-center'>
 
@@ -147,7 +158,7 @@ console.log(users)
               />
             </div>
 
-            <div className='flex justify-evenly w-[300px] mt-3 border-2 py-1 font-semibold'>
+            <div className='text-white flex justify-evenly w-[300px] mt-3 border-2 py-1 font-semibold'>
               <label htmlFor="birthday">Birthday:</label>
               <input
                 type="date"
@@ -159,7 +170,7 @@ console.log(users)
               />
             </div>
 
-            <div className='border-2 w-[300px] mt-3 flex justify-evenly p-2 rounded font-semibold'>
+            <div className='text-white border-2 w-[300px] mt-3 flex justify-evenly p-2 rounded font-semibold'>
               <div>
                 <label>
                   <input
@@ -314,7 +325,7 @@ console.log(users)
                 className='bg-green-600 py-1 rounded w-[200px] hover:bg-green-400 font-semibold'
               >Submit</button>
               <small
-                className='ml-8 my-2'
+                className='ml-8 my-2 text-white'
               >Have an account ? <Link className='hover:text-blue-500 font-bold' to='/login'>Login</Link></small>
             </div>
           </div>

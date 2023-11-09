@@ -23,7 +23,7 @@ const Login = () => {
   // Get the value of text field
   const [inputUsername, setInputUserName] = useState('')
   const [inputPassword, setInputPassword] = useState('')
-
+  
   const handleLogin = () => {
     const user = users.find((user) => user.username === inputUsername && user.password === inputPassword);
     if (user) {

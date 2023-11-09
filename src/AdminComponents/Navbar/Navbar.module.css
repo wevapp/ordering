@@ -1,0 +1,31 @@
+@media (max-width: 767px) { /* styles for small screens */ 
+   
+}
+@media (min-width: 768px) and (max-width: 1023px) { /* styles for medium screens */ 
+    .menu-btn{
+        display: block;
+        padding-left: 50px;
+        width: 100vh;
+    }
+}
+@media (min-width: 1024px) { /* styles for large screens */ 
+    .menu-btn{
+        display: none;
+    }
+    .nav-list{
+        display: block;
+    }
+}
+@media (min-width: 1440px) { /* styles for extra-large screens */ 
+    .menu-btn{
+        display: none;
+    }
+    .nav-list{
+        display: block;
+    }
+}
+@media (min-resolution: 192dpi) { /* styles for high-resolution screens */ 
+    .menu-btn{
+      
+    }
+}
