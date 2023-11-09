@@ -22,7 +22,7 @@ const AdminLogin = () => {
    const handleLogin = () => {
      const adm = admin.find((adm) => adm.username === username && adm.password === password);
     if (adm) {
-      navigate('/dashboard-')
+      navigate('/user-profile')
     } else {
       alert('Invalid')
       setAdminUsername({
