@@ -33,23 +33,23 @@ const Header = () => {
     }
 
   return (
-    <div className={`${StyleHeader['header']} container sticky top-0 z-10`}>
+    <div className={`${StyleHeader['header']} bg-orange-400 container sticky top-0 z-10`}>
     {/* Header with menu bar, welcome tag and cart*/}
     <div
         className='flex justify-evenly items-center h-[100px] text-white px-3 py-6'
       >
         <i 
           onClick={handleMenuList}
-          className="fa-sharp fa-solid fa-bars fa-beat-fade text-4xl text-green-500 cursor-pointer px-8"></i>
+          className="fa-sharp fa-solid fa-bars fa-beat-fade text-4xl cursor-pointer px-8"></i>
 
         <p
-            className={`${StyleHeader['welcome']} text-green-400 text-3xl w-[100%] text-center`}
+            className={`${StyleHeader['welcome']} text-3xl w-[100%] text-center`}
         ><strong>Welcome to Happy Restaurant</strong>
         </p>
        
         <i 
           onClick={handleCartItem}
-          className="fa-sharp fa-regular fa-cart-shopping fa-beat-fade text-4xl text-green-500 cursor-pointer relative pt-3 px-8">
+          className="fa-sharp fa-regular fa-cart-shopping fa-beat-fade text-4xl  cursor-pointer relative pt-3 px-8">
             <small
               className='absolute top-0 font-semibold text-center h-[30px] w-[20px] rounded-[50%] text-sm'
             >{countItems}</small>
