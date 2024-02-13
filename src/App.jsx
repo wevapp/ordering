@@ -34,7 +34,7 @@ function App() {
           <Route path='/register' element={<Register />}/>
             <Route element={<Menulayout />}>
               <Route path='/main' element={<Main />}/>
-              <Route path='/main/:id' element={<MeatDescription />}/>
+              <Route path='/desc/:id' element={<MeatDescription />}/>
               <Route path='/rice' element={<Rice />}/>
               <Route path='/juice' element={<Juice />}/>
               <Route path='/dessert' element={<Dessert />}/>

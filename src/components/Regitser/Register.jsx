@@ -58,7 +58,6 @@ const Register = () => {
 
   // Ternary operator to check length of password
   let passResult = password.length === 0 ? '' : password.length < 8 ? 'Weak password' : 'Strong password'
-
   let confirmPassResult = confirmPassword.length === 0 ? '' : confirmPassword.length < 8 ? 'weak password' : 'strong password'
 
 
@@ -137,28 +136,29 @@ const Register = () => {
   
 
   return (
-    <div className={`${RegStyle['register']} ml-[40%]`}>
-      <div className='transparent max-h-[100%] min-h-[100%] max-w-[100%] min-w-[100%]'>
-          <div className='shadow-xl px-12 w-[500px] flex flex-col justify-center items-center'>
-
-            <div>
+    <div className={`${RegStyle['register']}`}>
+      <div className='transparent flex justify-end items-center'>
+          <div className='shadow-xl flex flex-col justify-center items-center '>
+            <div className=''>
               <p
-                className='text-2xl font-bold h-[230px]'
+                className=''
               ><img src={RegLogo} alt="Logo" /></p>
             </div>
 
-            <div className='mt-3'>
+            {/* text field for fullname */}
+            <div className='mt-1'>
               <input  
                 ref={inputRef}
                 type="text" 
                 value={fullname}
                 placeholder='Full Name'
                 onChange={(e) => {setFullName(e.target.value)}}
-                className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                className='font-semibold border-2 px-2 py-1 rounded xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'
               />
             </div>
 
-            <div className='text-white flex justify-evenly w-[300px] mt-3 border-2 py-1 font-semibold'>
+            {/* text field for Bday */}
+            <div className='text-white flex justify-evenly mt-3 border-2 py-1 font-semibold xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'>
               <label htmlFor="birthday">Birthday:</label>
               <input
                 type="date"
@@ -170,7 +170,8 @@ const Register = () => {
               />
             </div>
 
-            <div className='text-white border-2 w-[300px] mt-3 flex justify-evenly p-2 rounded font-semibold'>
+            {/* text field for Gender*/}
+            <div className='text-white border-2 mt-3 flex justify-evenly p-2 rounded font-semibold xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'>
               <div>
                 <label>
                   <input
@@ -211,22 +212,24 @@ const Register = () => {
               </div>
             </div>
 
+            {/* text field for address*/}
             <div className='mt-3'>
               <input 
                 type="text" 
                 value={address}
                 placeholder='Address'
-                className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                className='font-semibold border-2 px-2 py-1 rounded xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'
                 onChange={(e) => {setAddress(e.target.value)}}
               />
             </div>
 
+            {/* text field for Contact*/}
             <div className='mt-3 grid'>
               <input 
                 type="text" 
                 value={contact}
                 placeholder='Contact'
-                className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                className='font-semibold border-2 px-2 py-1 rounded xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'
                 onChange={handleContactChange}
               />
               {
@@ -235,13 +238,13 @@ const Register = () => {
               
             </div>
 
-            
+            {/* text field for Email*/}
             <div className='mt-3 grid'>
               <input 
                 type="email" 
                 value={email}
                 placeholder='Email'
-                className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                className='font-semibold border-2 px-2 py-1 rounded xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'
                 onChange={handleEmailChange}
               />
               {
@@ -251,23 +254,25 @@ const Register = () => {
               }
             </div>
 
+            {/* text field for Username*/}
             <div className='mt-3'>
               <input 
                 type="text" 
                 value={username}
                 placeholder='Username'
-                className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                className='font-semibold border-2 px-2 py-1 rounded xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'
                 onChange={(e) => {setUsername(e.target.value)}}
               />
             </div>
 
+            {/* text field for Password and Confirm Passsword*/}
             <div className=''>
-              <div className='mt-3 flex relative'>
+              <div className='m-auto mt-3 flex relative xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'>
                 <input 
                   type={showPassword ?  'password' : 'text'}
                   value={password}
                   placeholder='Password'
-                  className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                  className='font-semibold border-2 px-2 py-1 rounded w-full'
                   onChange={(e) => {setPassword(e.target.value)}}
                 />
                 <div 
@@ -290,12 +295,12 @@ const Register = () => {
                 </div>
               }
 
-              <div className='mt-3 relative'>
+              <div className='m-auto mt-3 flex relative xs:w-[250px] sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]'>
                 <input 
                   type={showConfirmPassword ?  'password' : 'text'} 
                   value={confirmPassword}
                   placeholder='Confirm password'
-                  className='font-semibold border-2 px-2 py-1 w-[300px] rounded'
+                  className='font-semibold border-2 px-2 py-1 w-full rounded'
                   onChange={(e) => {setConfirmPassword(e.target.value)}}
                 />
                 <div 
@@ -322,7 +327,7 @@ const Register = () => {
             <div className='mt-6 grid'>
               <button
                 onClick={handleSubmit}
-                className='bg-green-600 py-1 rounded w-[200px] hover:bg-green-400 font-semibold'
+                className='bg-green-600 py-1 rounded w-[200px] hover:bg-green-500 font-semibold text-white'
               >Submit</button>
               <small
                 className='ml-8 my-2 text-white'

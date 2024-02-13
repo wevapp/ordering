@@ -36,13 +36,13 @@ return (
         className='w-64 px-3 py-1 rounded'
       />
     </search>
-    <ul className='p-4 grid gap-4 grid-cols-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+    <ul className='p-4 grid gap-4 grid-cols-4 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
       {itemsAttempSearch.map((dessertItem) => (
         <li
-          className='border p-2 rounded h-[250px] bg-slate-200' 
+          className='p-2 rounded bg-slate-100 xs:h-[150px] sm:h-[200px] md:h-[230px] lg:h-[230px] xl:h-[230px]' 
           key={dessertItem.id}>
-            <Link to={`/main/${dessertItem.id}`}><img src={dessertItem.img} alt={dessertItem.name} className='rounded h-[180px] w-[100%] object-cover cursor-pointer' /></Link>
-            <footer className='h-[60px] flex justify-between items-center px-4'>
+            <Link to={`/desc/${dessertItem.id}`}><img src={dessertItem.img} alt={dessertItem.name} className='rounded w-[100%] object-cover cursor-pointer xs:h-[100px] sm:h-[150px] md:h-[180px] lg:h-[180px] xl:h-[180px]' /></Link>
+            <footer className='flex justify-between items-center p-4 xs:h-[20px] sm:h-[10px] md:h-[40px] lg:h-[40px] xl:h-[40px]'>
               <div className='font-bold grid'>
                 <small className='text-green-600'>{dessertItem.name}</small>
                 <small className='text-rose-600'>$: {Number(dessertItem.price).toLocaleString(undefined, { minimumFractionDigits: 2 })}</small>

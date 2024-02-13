@@ -14,10 +14,10 @@ const MeatDescription = () => {
   const selectedItem = getAllItems.find((item => item.id === parseInt(id, 10)))
 
   return (
-    <div className='container flex flex-col justify-center items-center'>
-      <ul className='w-[400px] h-[450px] mt-4 p-2'>
+    <div className='container h-full p-20 flex flex-col justify-center items-center'>
+      <ul className='bg-slate-200 mt-4 p-2 rounded xs:w-[200px] sm:w-[400px] md:w-[400px] lg:w-[400px] xl:w-[400px]'>
         <li>
-          <img src={selectedItem.img} alt={selectedItem.name} className='h-[300px] rounded' />
+          <img src={selectedItem.img} alt={selectedItem.name} className='w-full rounded' />
         </li>
         <li>
           <strong className='text-green-600'>{selectedItem.name}</strong>
