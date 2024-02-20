@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const RootLayout = () => {
   const backgroundStyle = {
-    backgroundImage: "url('src/images/BackgroundImage/bg.PNG')",
+    backgroundImage: "url('src/images/BackgroundImage/bg.JPG')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
