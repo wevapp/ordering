@@ -331,7 +331,7 @@ const Register = () => {
               >Submit</button>
               <small
                 className='ml-8 my-2 text-white'
-              >Have an account ? <Link className='hover:text-blue-500 font-bold' to='/login'>Login</Link></small>
+              >Have an account ? <Link className='hover:text-blue-500 font-bold' to='/ordering'>Login</Link></small>
             </div>
           </div>
       </div>

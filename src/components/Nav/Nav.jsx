@@ -14,7 +14,7 @@ const Nav = ({ resetClick }) => {
     <div className='container bg-blue-100 transition delay-300 duration-300 ease-in-out z-10'>
       <ul className='px-16 pb-4'>
         <li className='border-b-4 border-slate-100 text-center font-bold py-2 flex'>
-          <Link to='/login'>
+          <Link to='/ordering'>
             <i className="fa-solid fa-square-arrow-left fa-2xl hover:text-orange-500"></i>
           </Link>
           <p className='flex-initial w-[100%] mx-2'>CATEGORIES</p>
