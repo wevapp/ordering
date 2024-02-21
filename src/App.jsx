@@ -43,7 +43,7 @@ function App() {
             </Route>
         </Route>
         <Route path='/print-bill' element={<DisplayBill />}/>
-        {/* <Route path='/*' element={<PageNotFound />}/> */}
+        <Route path='/*' element={<PageNotFound />}/>
         <Route path='/admin--' element={<AdminLogin />}/>
         <Route element={<Dashboard />}>
           <Route path='/user-profile-' element={<Userprofile />}/>
