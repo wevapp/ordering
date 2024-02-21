@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route element={<Rootlayout />}>
           <Route index element={<Login />}/>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/ordering' element={<Login />}/>
           <Route path='/register' element={<Register />}/>
             <Route element={<Menulayout />}>
               <Route path='/main' element={<Main />}/>
