@@ -1,20 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import useFoodStore from '../../../store/useFoodStore';
 
 const RootLayout = () => {
-  const backgroundStyle = {
-    // backgroundImage: "url('src/images/BackgroundImage/bg.JPG')",
-    backgroundColor: '#b08413',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    margin: 'auto',
-    width: '100%'
-  };
+  const bgImg = useFoodStore((state) => state.background)
+  
 
   return (
-    <div style={backgroundStyle} className='container h-full'>
+    <div style={{backgroundImage: `url(${bgImg.img})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100%', margin: 'auto', width: '100%'}} className='container h-full'>
       <Outlet />
     </div>
   );

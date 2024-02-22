@@ -45,7 +45,14 @@ import soda2 from '../images/Soda/soda2.jpg'
 import soda3 from '../images/Soda/soda3.jpg'
 import soda4 from '../images/Soda/soda4.jpg'
 
+// import bg image
+import bgImg from '../images/BackgroundImage/bg.JPG'
+
 const useFoodStore = create((set) => ({
+  background: {
+    img: bgImg,
+  },
+
   // define variable for all items
   foodItems: {
     items:[
